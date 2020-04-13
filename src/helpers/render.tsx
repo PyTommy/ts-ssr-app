@@ -1,11 +1,10 @@
-
 import * as React from 'react';
 import { renderToString } from 'react-dom/server';
-import Home from '../client/components/Home';
+import App from '../client/App';
 
 export default () => {
     const content = renderToString(
-        <Home />
+        <App />
     );
 
     return `
@@ -13,7 +12,7 @@ export default () => {
       <head>
       </head>
       <body>
-        <div id="root">${content}</div>
+        <div id="app">${content}</div>
         <script src="bundle.js"></script>
       </body>
     </html>
